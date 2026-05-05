@@ -157,9 +157,9 @@ void BattlegroundMgr::Update(uint32 diff)
             TC_LOG_TRACE("bg.arena", "BattlegroundMgr: UPDATING ARENA QUEUES");
             for (int qtype = BATTLEGROUND_QUEUE_2v2; qtype <= BATTLEGROUND_QUEUE_5v5; ++qtype)
             {
-                //for (int bracket = BG_BRACKET_ID_FIRST; bracket < MAX_BATTLEGROUND_BRACKETS; ++bracket)
+                for (int bracket = BG_BRACKET_ID_FIRST; bracket < MAX_BATTLEGROUND_BRACKETS; ++bracket)
                     m_BattlegroundQueues[qtype].BattlegroundQueueUpdate(diff,
-                    BATTLEGROUND_AA, BattlegroundBracketId(14),//bracket
+                    BATTLEGROUND_AA, BattlegroundBracketId(bracket),
                     BattlegroundMgr::BGArenaType(BattlegroundQueueTypeId(qtype)), true, 0);
             }
 
