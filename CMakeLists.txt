@@ -14,6 +14,19 @@ cmake_minimum_required(VERSION 3.24)
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
+# setup boost path
+set(Boost_INCLUDE_DIR "/run/media/ajo/SSD/Modding/Legion/boost_1_84_0")
+set(Boost_LIBRARY_DIR "/run/media/ajo/SSD/Modding/Legion/boost_1_84_0/stage/lib")
+
+set(MYSQL_ROOT "/run/media/ajo/SSD/Modding/Legion/mysql-8.0.46-linux-glibc2.28-x86_64")  # <-- anpassen!
+
+set(MYSQL_INCLUDE_DIR "${MYSQL_ROOT}/include")
+set(MYSQL_LIBRARY "${MYSQL_ROOT}/lib/libmysqlclient.so")
+include_directories(${MYSQL_INCLUDE_DIR})
+
+# allow multiple builds
+add_custom_target(servers DEPENDS worldserver bnetserver)
+
 # Set projectname (must be done AFTER setting configurationtypes)
 project(DestinyCore)
 
