@@ -571,6 +571,16 @@ void WorldSession::LogoutPlayer(bool save)
         ///- Remove pet
         _player->RemovePet(nullptr, PET_SAVE_LOGOUT, true);
 
+        // Lock class trial characters on logout. The character can be unlocked later by a real boost.
+        if (_player->HasAtLoginFlag(AT_LOGIN_CLASS_TRIAL))
+        {
+            _player->SetAtLoginFlag(AT_LOGIN_CLASS_TRIAL_LOCKED);
+            CharacterDatabasePreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_UPD_ADD_AT_LOGIN_FLAG);
+            stmt->setUInt16(0, uint16(AT_LOGIN_CLASS_TRIAL_LOCKED));
+            stmt->setUInt64(1, _player->GetGUID().GetCounter());
+            CharacterDatabase.Execute(stmt);
+        }
+
         ///- Clear whisper whitelist
         _player->ClearWhisperWhiteList();
 

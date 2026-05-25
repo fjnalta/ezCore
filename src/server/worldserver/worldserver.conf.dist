@@ -4225,6 +4225,22 @@ BattlePay.Enabled = 1
 BattlePay.Currency = 1
 
 #
+#     CharacterBoost.Enabled
+#        Description: Enable Character Boost delivery from the BattlePay shop.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+
+CharacterBoost.Enabled = 0
+
+#
+#     ClassTrial.Enabled
+#        Description: Enable Class Trial flow at character select.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+
+ClassTrial.Enabled = 1
+
+#
 ###################################################################################################
 
 ###################################################################################################

@@ -19,8 +19,8 @@
 /// @{
 /// \file
 
-#ifndef WORLDSESSION_H
-#define WORLDSESSION_H
+#ifndef DESTINYCORE_WORLDSESSION_H
+#define DESTINYCORE_WORLDSESSION_H
 
 #include "AsyncCallbackProcessor.h"
 #include "Common.h"
@@ -2100,9 +2100,15 @@ class TC_GAME_API WorldSession
             return _legitCharacters.find(lowGUID) != _legitCharacters.end();
         }
 
+        bool IsClassTrialLockedCharacter(ObjectGuid lowGUID)
+        {
+            return _classTrialLockedCharacters.find(lowGUID) != _classTrialLockedCharacters.end();
+        }
+
         // this stores the GUIDs of the characters who can login
         // characters who failed on Player::BuildEnumData shouldn't login
         GuidSet _legitCharacters;
+        GuidSet _classTrialLockedCharacters;
 
         ObjectGuid::LowType m_GUIDLow;                      // set logined or recently logout player (while m_playerRecentlyLogout set)
         Player* _player;

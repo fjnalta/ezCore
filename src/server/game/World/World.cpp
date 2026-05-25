@@ -1733,6 +1733,8 @@ void World::LoadConfigSettings(bool reload)
     // BattlePay
     m_bool_configs[CONFIG_BATTLE_PAY_ENABLED] = sConfigMgr->GetBoolDefault("BattlePay.Enabled", true);
     m_int_configs[CONFIG_BATTLE_PAY_CURRENCY] = sConfigMgr->GetIntDefault("BattlePay.Currency", 1);
+    m_bool_configs[CONFIG_CHARACTER_BOOST_ENABLED] = sConfigMgr->GetBoolDefault("CharacterBoost.Enabled", false);
+    m_bool_configs[CONFIG_CLASS_TRIAL_ENABLED] = sConfigMgr->GetBoolDefault("ClassTrial.Enabled", false);
 
     // HotSwap
     m_bool_configs[CONFIG_HOTSWAP_ENABLED] = sConfigMgr->GetBoolDefault("HotSwap.Enabled", true);

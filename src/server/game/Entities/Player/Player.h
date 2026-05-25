@@ -15,8 +15,8 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef DESTINYCORE_PLAYER_H
+#define DESTINYCORE_PLAYER_H
 
 #include "Arena.h"
 #include "ArenaHelper.h"
@@ -584,6 +584,8 @@ enum AtLoginFlags
     AT_LOGIN_CHANGE_FACTION    = 0x040,
     AT_LOGIN_CHANGE_RACE       = 0x080,
     AT_LOGIN_RESURRECT         = 0x100,
+    AT_LOGIN_CLASS_TRIAL       = 0x200,
+    AT_LOGIN_CLASS_TRIAL_LOCKED= 0x400,
 };
 
 typedef std::map<uint32, QuestStatusData> QuestStatusMap;
