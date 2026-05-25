@@ -39,6 +39,7 @@
 #include "SpellScript.h"
 #include "WorldPacket.h"
 #include "World.h"
+#include "CellImpl.h"
 
 enum WarlockSpells
 {

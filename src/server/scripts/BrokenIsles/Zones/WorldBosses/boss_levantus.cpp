@@ -34,6 +34,7 @@
 #include "GridNotifiersImpl.h"
 #include "AreaTriggerAI.h"
 #include "AreaTriggerPackets.h"
+#include "CellImpl.h"
  
 Position const Waypointspawn[6] =
 {

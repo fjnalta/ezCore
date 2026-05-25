@@ -26,6 +26,7 @@
 #include "SpellPackets.h"
 #include "SpellScript.h"
 #include "PlayerStorage.h"
+#include "CellImpl.h"
 
 enum MonkSpells
 {
